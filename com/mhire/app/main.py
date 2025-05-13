@@ -4,14 +4,12 @@ from fastapi import status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import PlainTextResponse
 
-from com.mhire.app.services.ai_coach.ai_coach_router import router as ai_coach_router
-from com.mhire.app.services.food_scanner.food_scanner_router import router as food_scanner_router
-from com.mhire.app.services.meal_planner.meal_planner_router import router as meal_planner_router
-from com.mhire.app.services.workout_planner.workout_planner_router import router as workout_planner_router
+from com.mhire.app.services.feature_1.feature_1 import router as feature_1_router
+
 
 app = FastAPI(
-    title="Gym Coach API",
-    description="AI-powered Gym and Health coaching application",
+    title="AI",
+    description="AI-powered System",
     version="1.0.0"
 )
 
@@ -25,10 +23,7 @@ app.add_middleware(
 )
 
 # Register routers
-app.include_router(ai_coach_router)
-app.include_router(food_scanner_router)
-app.include_router(meal_planner_router)
-app.include_router(workout_planner_router)
+app.include_router(feature_1_router)
 
 @app.get("/", status_code=status.HTTP_200_OK, response_class=PlainTextResponse)
 async def health_check():
