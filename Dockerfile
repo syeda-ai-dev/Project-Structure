@@ -27,7 +27,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # Expose port 8000 (Uvicorn will run here)
-EXPOSE 8000
+EXPOSE 8052
 
 # Run the Uvicorn server
 CMD ["uvicorn", "com.mhire.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
