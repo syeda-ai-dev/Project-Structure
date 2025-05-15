@@ -5,3 +5,5 @@ httpx
 pydantic
 typing-extensions
 python-multipart
+motor
+pymongo
